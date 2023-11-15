@@ -1,15 +1,9 @@
-
-
-
 function App() {
-
-
   return (
     <>
-    <h1>Xprev</h1>
-       
+      <h1>Xprev</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
