@@ -1,7 +1,10 @@
+import NavHeader from "./organisms/NavHeader/nav";
+
 function App() {
   return (
     <>
-      <h1>Xprev</h1>
+      
+      <NavHeader />
     </>
   );
 }
