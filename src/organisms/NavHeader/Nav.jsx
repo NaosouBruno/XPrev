@@ -1,24 +1,43 @@
-import "./nav.scss";
-import BurguerMenu from "../../molecules/BurguerMenu/Burguer";
 import { useState } from "react";
-export default function NavHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+import "./nav.scss";
+import ButtonsNav from "../../atoms/ButtonsNav/ButtonNav";
+function NavHeader() {
+  const [clicked, setClicked] = useState(false);
+
   return (
-    <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
-      <div className="nav-group">
-        <BurguerMenu onToggle={toggleMenu} />
-        <div className="nav-containerTitle">
-          <h2 className="nav-text nav-text--title">X-Prev</h2>
+    <header>
+      <nav className="navContainer">
+        <div className="navContainer__title ">
+          <h1>X-Prev</h1>
         </div>
-      </div>
-      <ul className="nav-items nav-text">
-        <li key="item1">Quem Somos</li>
-        <li key="item2">Serviços</li>
-        <li key="item3">Agende sua consulta</li>
-      </ul>
-    </nav>
+        <ul className={`navContainer__items ${clicked && "open"}`}>
+          <li onClick={() => setClicked(!clicked)}>
+            <ButtonsNav name="Inicio" link="start" />
+          </li>
+          <li onClick={() => setClicked(!clicked)}>
+            <ButtonsNav name="Quem Somos" link="sobre" />
+          </li>
+          <li onClick={() => setClicked(!clicked)}>
+            <ButtonsNav name="Serviços" link="servicos" />
+          </li>
+          <li onClick={() => setClicked(!clicked)}>
+            <ButtonsNav name="Agende sua consulta" link="contact" />
+          </li>
+        </ul>
+        <div
+          className={`nav-toggle ${clicked && "open"}`}
+          onClick={() => setClicked(!clicked)}
+        >
+          <div className="burger-menu">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+          <h2 className="burguer-title">X-Prev</h2>
+        </div>
+      </nav>
+    </header>
   );
 }
+
+export default NavHeader;

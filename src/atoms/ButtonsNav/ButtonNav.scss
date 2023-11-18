@@ -1,0 +1,39 @@
+@use "/src/styles/variables" as *;
+.btnNav {
+  &--itemLink {
+    color: #ffff;
+    text-decoration: none;
+    &:link {
+      text-decoration: none;
+    }
+  }
+  &--itemName {
+    background-color: transparent;
+    margin: 15px;
+    font-family: $text-family;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+    opacity: 1;
+    border: none;
+
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #ffff;
+      transition: all 0.45s;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}
