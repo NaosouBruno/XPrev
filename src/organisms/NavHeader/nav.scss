@@ -11,13 +11,19 @@
       @media (min-width: $tablet) {
         display: block;
         z-index: 1;
-        margin-left: 5%;
-        
+        margin-left: 2%; 
         color: #FFFF;
         font-family: $text-family;
         letter-spacing: 4px;
         font-weight: 300;
-  
+      }
+      @media (min-width: 880px) {
+        margin-left: 3% ;
+       
+      }
+      @media (min-width: $smallDesktop) {
+        margin-left: 5% ;
+       
       }
     }
   }
@@ -43,6 +49,15 @@
         height: 60px;
         justify-content: center;
         align-items: center;
+        left: 7%;
+      }
+      @media (min-width: 880px) {
+        left: 3% ;
+       
+      }
+      @media (min-width: $smallDesktop) {
+        left: 0% ;
+       
       }
     }
     &.open {
