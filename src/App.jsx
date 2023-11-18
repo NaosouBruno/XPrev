@@ -1,4 +1,4 @@
-import NavHeader from "./organisms/NavHeader/nav";
+import NavHeader from "./organisms/NavHeader/Nav";
 
 function App() {
   return (
