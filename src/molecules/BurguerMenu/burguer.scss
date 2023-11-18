@@ -11,11 +11,22 @@
       height: 3px;
       background-color: #333;
       transition: 0.3s;
+      
+    }
+    .bar:nth-child(1){
+      background-color: #00a24d;
+    }
+    .bar:nth-child(2){
+      background-color: #0644f9;
+    }
+    .bar:nth-child(3){
+      background-color: #f5bf0d;
     }
   
     &.open {
       .bar:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
+       
       }
       .bar:nth-child(2) {
         opacity: 0;
