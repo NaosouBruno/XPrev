@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+
+.form-submit-button {
+  height: 42px;
+  border: none;
+  background-color: $green;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter 0.3s;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+
+  &:active {
+    filter: brightness(70%);
+  }
+
+  &:disabled {
+    background-color: #ccd1d6;
+    cursor: default;
+    filter: none;
+  }
+}

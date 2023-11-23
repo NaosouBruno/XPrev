@@ -5,7 +5,11 @@ function App() {
   return (
     <>
       <NavHeader />
-      <ContactForm />
+      <div style={{ padding: 16, display: "flex", justifyContent: "center" }}>
+        <div style={{ width: "50vw" }}>
+          <ContactForm />
+        </div>
+      </div>
     </>
   );
 }

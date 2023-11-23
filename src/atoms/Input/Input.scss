@@ -1,0 +1,39 @@
+@import "/src/styles/variables";
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: $text-family;
+  padding: 0 16px;
+  border: 1px solid #dde0e8;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $blue;
+  }
+}
+
+.text-area {
+  height: auto;
+  padding-top: 8px;
+  resize: none;
+}
+
+.input-label {
+  padding-left: 8px;
+  font-size: 12px;
+  font-family: $text-family;
+}
+
+.required-indicator {
+  color: red;
+}

@@ -1,0 +1,27 @@
+@import "/src/styles/variables";
+
+.alert {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 0 16px;
+  animation: render 0.3s;
+  font-size: 12px;
+
+  &.success {
+    background-color: rgb(237, 247, 237);
+    color: $green;
+  }
+}
+
+@keyframes render {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
