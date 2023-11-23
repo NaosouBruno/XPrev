@@ -1,8 +1,8 @@
 import { useState } from "react";
+import Alert from "../../atoms/Alert/Alert";
 import FormSubmitButton from "../../atoms/FormSubmitButton/FormSubmitButton";
 import Input from "../../atoms/Input/Input";
 import "./ContactForm.scss";
-import Alert from "../../atoms/Alert/Alert";
 
 export default function ContactForm() {
   const [contact, setContact] = useState({
@@ -25,16 +25,21 @@ export default function ContactForm() {
   async function submit() {
     setIsSubmitting(true);
 
-    await fetch("https://formsubmit.co/ajax/9134f5699246e801b9b19d45c453ece4", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: contact.name,
-        message: formatEmailMessage(),
-      }),
-    });
+    await fetch(
+      `${import.meta.env.VITE_FORMSUBMIT_URL}/${
+        import.meta.env.VITE_FORMSUBMIT_ID
+      }`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: contact.name,
+          message: formatEmailMessage(),
+        }),
+      }
+    );
     setSuccessAlertVisible(true);
     setIsSubmitting(false);
   }
