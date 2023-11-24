@@ -13,15 +13,6 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successAlertVisible, setSuccessAlertVisible] = useState(false);
 
-  function formatEmailMessage() {
-    return `
-      Uma nova pessoa entrou em contato!
-      Seguem informações:\n
-      Telefone: ${contact.phoneNumber}\n
-      Mensagem: ${contact.message}\n
-    `;
-  }
-
   async function submit() {
     setIsSubmitting(true);
 
@@ -40,8 +31,18 @@ export default function ContactForm() {
         }),
       }
     );
+
     setSuccessAlertVisible(true);
     setIsSubmitting(false);
+  }
+
+  function formatEmailMessage() {
+    return `
+      Uma nova pessoa entrou em contato!
+      Seguem informações:\n
+      Telefone: ${contact.phoneNumber}\n
+      Mensagem: ${contact.message}\n
+    `;
   }
 
   function contactFieldChange(key, value) {
