@@ -1,10 +1,13 @@
-import NavHeader from "./organisms/NavHeader/Nav";
+import Intro from "./organisms/Intro/Intro";
+import NavHeader from "./organisms/NavHeader/nav";
+
 
 function App() {
   return (
     <>
       
       <NavHeader />
+      <Intro />
     </>
   );
 }
