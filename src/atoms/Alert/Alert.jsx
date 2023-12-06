@@ -6,6 +6,8 @@ export default function Alert(props) {
     switch (props.type) {
       case "success":
         return "✅";
+      case "error":
+        return "⚠️";
     }
   }
   return (

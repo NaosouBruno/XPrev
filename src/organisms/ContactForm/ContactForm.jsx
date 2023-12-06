@@ -1,101 +1,118 @@
+import { Formik } from "formik";
 import { useState } from "react";
 import Alert from "../../atoms/Alert/Alert";
 import FormSubmitButton from "../../atoms/FormSubmitButton/FormSubmitButton";
 import Input from "../../atoms/Input/Input";
+import {
+  contactFormInitialValues,
+  contactFormSchema,
+} from "../../constants/contact-form-constants";
+import { formatEmailMessage } from "../../utilities/contact-form-utilities";
 import "./ContactForm.scss";
 
 export default function ContactForm() {
-  const [contact, setContact] = useState({
-    message: "",
-    name: "",
-    phoneNumber: "",
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successAlertVisible, setSuccessAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState({ type: null, message: "" });
 
-  async function submit() {
+  async function submit(formValues) {
     setIsSubmitting(true);
 
-    await fetch(
-      `${import.meta.env.VITE_FORMSUBMIT_URL}/${
-        import.meta.env.VITE_FORMSUBMIT_ID
-      }`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: contact.name,
-          message: formatEmailMessage(),
-        }),
-      }
-    );
+    try {
+      await fetch(
+        `${import.meta.env.VITE_FORMSUBMIT_URL}/${
+          import.meta.env.VITE_FORMSUBMIT_ID
+        }`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formValues.name,
+            message: formatEmailMessage(formValues),
+          }),
+        }
+      );
 
-    setSuccessAlertVisible(true);
+      setAlertMessage({
+        type: "success",
+        message:
+          "Recebemos suas informações e em breve entraremos em contato :)",
+      });
+    } catch (error) {
+      setAlertMessage({
+        type: "error",
+        message:
+          "Ocorreu um erro ao enviar seu formulário. Por favor tente novamente.",
+      });
+    }
+
     setIsSubmitting(false);
-  }
-
-  function formatEmailMessage() {
-    return `
-      Uma nova pessoa entrou em contato!
-      Seguem informações:\n
-      Telefone: ${contact.phoneNumber}\n
-      Mensagem: ${contact.message}\n
-    `;
-  }
-
-  function contactFieldChange(key, value) {
-    setContact({
-      ...contact,
-      [key]: value,
-    });
-  }
-
-  function isFormValid() {
-    return !!contact.name && !!contact.phoneNumber;
   }
 
   return (
     <div className="contact-form">
-      {successAlertVisible ? (
-        <Alert
-          text="Recebemos suas informações e em breve entraremos em contato :)"
-          type="success"
-        />
+      {alertMessage.message ? (
+        <Alert text={alertMessage.message} type={alertMessage.type} />
       ) : null}
-      <Input
-        label="Nome"
-        name="name"
-        placeholder="Digite seu nome"
-        required={true}
-        value={contact.name}
-        valueChange={(value) => contactFieldChange("name", value)}
-      />
-      <Input
-        placeholder="Digite seu celular"
-        mask="99 99999 9999"
-        name="phone-number"
-        label="Celular"
-        value={contact.phoneNumber}
-        required={true}
-        valueChange={(value) => contactFieldChange("phoneNumber", value)}
-      />
-      <Input
-        label="Mensagem"
-        multiline={true}
-        lines={4}
-        name="message"
-        placeholder="Digite sua Mensagem"
-        value={contact.message}
-        valueChange={(value) => contactFieldChange("message", value)}
-      />
-      <FormSubmitButton
-        text="Enviar"
-        disabled={!isFormValid()}
-        isLoading={isSubmitting}
-        onClick={() => submit()}
-      />
+      <Formik
+        initialValues={contactFormInitialValues}
+        validationSchema={contactFormSchema}
+        validateOnChange
+        validateOnMount
+        onSubmit={(values) => submit(values)}
+      >
+        {({
+          errors,
+          values,
+          setFieldValue,
+          isValid,
+          submitForm,
+          touched,
+          setFieldTouched,
+        }) => (
+          <>
+            <Input
+              label="Nome"
+              name="name"
+              placeholder="Digite seu nome"
+              error={touched.name ? errors.name : null}
+              onBlur={() => setFieldTouched("name")}
+              required={true}
+              value={values.name}
+              valueChange={(value) => setFieldValue("name", value)}
+            />
+            <Input
+              label="Celular"
+              mask="99 99999 9999"
+              name="phone-number"
+              placeholder="Digite seu celular"
+              error={touched.phoneNumber ? errors.phoneNumber : null}
+              onBlur={() => setFieldTouched("phoneNumber")}
+              value={values.phoneNumber}
+              required={true}
+              valueChange={(value) => setFieldValue("phoneNumber", value)}
+            />
+            <Input
+              label="Mensagem"
+              name="message"
+              placeholder="Digite sua Mensagem"
+              error={touched.message ? errors.message : null}
+              lines={4}
+              multiline={true}
+              onBlur={() => setFieldTouched("message")}
+              value={values.message}
+              valueChange={(value) => setFieldValue("message", value)}
+            />
+            <FormSubmitButton
+              text="Enviar"
+              disabled={!isValid || alertMessage.type === "success"}
+              isLoading={isSubmitting}
+              onClick={() => submitForm()}
+            />
+          </>
+        )}
+      </Formik>
     </div>
   );
 }

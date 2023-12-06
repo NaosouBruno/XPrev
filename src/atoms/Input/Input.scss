@@ -17,6 +17,10 @@
   border: 1px solid #dde0e8;
   transition: border-color 0.2s;
 
+  &.error {
+    border-color: $red;
+  }
+
   &:focus {
     border-color: $blue;
   }
@@ -35,5 +39,12 @@
 }
 
 .required-indicator {
-  color: red;
+  color: $red;
+}
+
+.error-message {
+  font-size: 12px;
+  color: $red;
+  padding-left: 8px;
+  font-family: $text-family;
 }
