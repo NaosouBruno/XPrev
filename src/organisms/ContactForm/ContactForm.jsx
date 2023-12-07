@@ -18,7 +18,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      throw new Error();
       await fetch(
         `${import.meta.env.VITE_FORMSUBMIT_URL}/${
           import.meta.env.VITE_FORMSUBMIT_ID
