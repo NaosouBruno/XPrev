@@ -1,7 +1,10 @@
 import * as yup from "yup";
 
 export const contactFormSchema = yup.object().shape({
-  message: yup.string().min(20, "Preencha no mínimo 20 caracteres."),
+  message: yup
+    .string()
+    .min(20, "Preencha no mínimo 20 caracteres.")
+    .required("A mensagem é obrigatória."),
   name: yup
     .string()
     .min(3, "Preencha no mínimo 3 caracteres.")
