@@ -20,5 +20,5 @@ export default function Alert(props) {
 
 Alert.propTypes = {
   text: PropTypes.string,
-  type: "success" | "error",
+  type: PropTypes.string,
 };
