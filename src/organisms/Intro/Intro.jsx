@@ -7,7 +7,7 @@ function Intro() {
       <div>
         <h1 className="introContainer__title">
           Seja bem vindo a{" "}
-          <span className="introContainer__nameTitle">X-PREV</span>
+          <span className="introContainer__nameTitle">XPREV</span>
         </h1>
       </div>
       <div>

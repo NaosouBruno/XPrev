@@ -7,4 +7,56 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ffff;
+    font-family: $text-family;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding: 0 5%;
+    text-align: justify;
+    @media screen and (min-width: $smallDesktop) {
+      padding: 0;
+       
+     }
+    &__title{
+        color: #ffff;
+        font-family: $text-family;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+    &__listServices{
+        list-style: none;
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 2%;
+            
+        }
+    }
+    &__itemService{
+        @media screen and (min-width: $smallDesktop) {
+           width: 40%;
+           padding: 2%;
+           margin: 2%;
+           border: 1px solid black;
+           border-radius: 15px;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__buttonServices{
+        margin: 5% 0;
+        width: 60%;
+        
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;font-family: $text-family;
+        letter-spacing: 1px;
+        font-weight: 300;
+        font-size: 1em;
+    }
 }
