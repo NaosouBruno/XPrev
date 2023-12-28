@@ -51,7 +51,8 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="contact-form">
+    <div className="contact-form" id="contact">
+      <h2 className="contact-title">Envie sua dúvida</h2>
       {alertMessage.message ? (
         <Alert text={alertMessage.message} type={alertMessage.type} />
       ) : null}

@@ -1,10 +1,10 @@
 import "./about.scss"
 function About() {
   return (
-    <section className="containerAbout">
+    <section className="containerAbout" id="about">
       <h2>Sobre a XPrev</h2>
-      <div>
-        <p>
+      <div >
+        <p className="containerAbout__containItens">
           A XPrev é uma equipe especializada em Assessoria Administrativa.
           Orientamos e solucionamos questões relacionadas ao Regime Geral (INSS)
           e Regime Próprio de Previdência (Servudires Públicos), em âmbito

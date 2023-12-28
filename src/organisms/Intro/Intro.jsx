@@ -3,7 +3,7 @@ import Logo from "../../assets/logo-sem-fundo.png";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 function Intro() {
   return (
-    <section className="introContainer">
+    <section className="introContainer" id="start">
       <div>
         <h1 className="introContainer__title">
           Seja bem vindo a{" "}

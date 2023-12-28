@@ -15,10 +15,10 @@ function NavHeader() {
             <ButtonsNav name="Inicio" link="start" />
           </li>
           <li onClick={() => setClicked(!clicked)}>
-            <ButtonsNav name="Quem Somos" link="sobre" />
+            <ButtonsNav name="Quem Somos" link="about" />
           </li>
           <li onClick={() => setClicked(!clicked)}>
-            <ButtonsNav name="Serviços" link="servicos" />
+            <ButtonsNav name="Serviços" link="services" />
           </li>
           <li onClick={() => setClicked(!clicked)}>
             <ButtonsNav name="Agende sua consulta" link="contact" />

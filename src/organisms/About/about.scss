@@ -11,4 +11,15 @@
   padding: 1%;
   padding: 5%;
   margin-bottom: 5%;
+  &__containItens{
+    margin-bottom: 2%;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 1%;
+      
+  }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0.5%;
+      
+  }
+  }
 }

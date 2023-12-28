@@ -2,7 +2,7 @@ import "./services.scss";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 function Services() {
   return (
-    <section className="containerServices">
+    <section className="containerServices" id="services">
       <h2 className="containerServices__title">Conheças nossos serviços</h2>
       <ul className="containerServices__listServices">
         <li className="containerServices__itemService">
@@ -15,7 +15,7 @@ function Services() {
           </p>
         </li>
         <li className="containerServices__itemService">
-          <h2 style={{ color: "#0644f9" }}> Auxílio Maternidade </h2>
+          <h2 style={{color: "rgb(237 17 66)" }}> Auxílio Maternidade </h2>
           <p>
             {" "}
             Auxílio Maternidade é o suporte concedido durante o período de
@@ -44,7 +44,7 @@ function Services() {
           </p>
         </li>
         <li className="containerServices__itemService">
-          <h2 style={{ color: "#0644f9" }}>
+          <h2 style={{ color:"rgb(237 17 66)", textAlign: "center" }}>
             {" "}
             Benefícios Assistencias (BPC/LOAS){" "}
           </h2>
