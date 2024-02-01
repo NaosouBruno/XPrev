@@ -7,14 +7,14 @@ function Intro() {
       <div>
         <h1 className="introContainer__title">
           Seja bem vindo a{" "}
-          <span className="introContainer__nameTitle">XPREV</span>
+          <span className="introContainer__nameTitle">X-PREV</span>
         </h1>
       </div>
       <div>
         <p>Assessoria e Consultoria Previdenciária</p>
       </div>
       <div>
-        <span>Atendemos todo território nacional </span>
+        <span>Atendemos todo território nacional. </span>
       </div>
       <div className="introContainer__infoLarge">
         <p>

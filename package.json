@@ -1,9 +1,10 @@
 {
   "name": "xprev",
+  "homepage": "http://xprevassessoria.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/NaosouBruno/XPrev",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
