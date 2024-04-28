@@ -7,7 +7,7 @@ function About() {
         <p className="containerAbout__containItens">
           A X-Prev é uma equipe especializada em Assessoria Administrativa.
           Orientamos e solucionamos questões relacionadas ao Regime Geral (INSS)
-          e Regime Próprio de Previdência (Servudires Públicos), em âmbito
+          e Regime Próprio de Previdência (Servidores Públicos), em âmbito
           Administrativo.
         </p>
         <p>

@@ -46,7 +46,7 @@ function Services() {
         <li className="containerServices__itemService">
           <h2 style={{ color:"rgb(237 17 66)", textAlign: "center" }}>
             {" "}
-            Benefícios Assistencias (BPC/LOAS){" "}
+            Benefícios Assistenciais (BPC/LOAS){" "}
           </h2>
           <p>
             {" "}

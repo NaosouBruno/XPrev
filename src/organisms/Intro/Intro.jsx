@@ -6,7 +6,7 @@ function Intro() {
     <section className="introContainer" id="start">
       <div>
         <h1 className="introContainer__title">
-          Seja bem vindo a{" "}
+          Seja bem-vindo a{" "}
           <span className="introContainer__nameTitle">X-PREV</span>
         </h1>
       </div>
@@ -19,12 +19,12 @@ function Intro() {
       <div className="introContainer__infoLarge">
         <p>
           A sua satisfação é a nossa principal prioridade! Estamos disponíveis
-          para atendimento remoto em todo o território nacional Fique à vontade
+          para atendimento remoto em todo o território nacional. Fique à vontade
           para entrar em contato conosco através do nosso número no WhatsApp:
         </p>
         <div className="introContainer__infoBottom">
           <span>(67) 98449-7410 </span>
-          <span> Ou pode usar algum dos botões abaixo</span>
+          <span> Ou pode usar algum dos botões abaixo.</span>
         </div>
       </div>
 
